@@ -40,6 +40,7 @@
 
 enum twi_err {START_FAILED, SET_ADDR_FAILED, POLL_FAILED, 
               WRITE_COMMAND_FAILED, WRITE_VAL_FAILED, READ_ACK_FAILED };
+
 enum twi_err error;
 
 

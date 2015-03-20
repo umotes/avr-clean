@@ -85,7 +85,7 @@ static int configure(int type, int c)
     case SENSOR_CONFIG_LT:
         if(value)
         {
-//	return SetTempLowLimit(value);
+	return SetTempLowLimit(value);
         return 0;      
 	}
 	else 
@@ -96,7 +96,7 @@ static int configure(int type, int c)
         
 	if(value)
 	{
-//	return SetTempHiLimit(value);
+	return SetTempHiLimit(value);
         return 0;
 	}
 	
@@ -113,15 +113,6 @@ static int configure(int type, int c)
   }
 return 0;
 }
-/*
-static int
-configure(int type, int c)
-{
-TWIInit();
-return 0;
-
-}
-*/
 
 /*---------------------------------------------------------------------------*/
 static int
