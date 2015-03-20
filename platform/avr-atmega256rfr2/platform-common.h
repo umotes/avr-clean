@@ -80,8 +80,8 @@
 // ========= PORT E Assignement and Description =====================
 
 #define SSD_DC_PORT 		  PORTE
-#define SSD_DC_DIR			  DDRE
-#define SSD_DC_PIN			  PORTE2
+#define SSD_DC_DIR		  DDRE
+#define SSD_DC_PIN		  PORTE2
 
 
 #define LED_STATUS_PORT		  PORTE
@@ -101,13 +101,19 @@
 // ========= PORT G Assignement and Description =====================
 
 #define SSD_CS_PORT 		  PORTG
-#define SSD_CS_DIR			  DDRG
-#define SSD_CS_PIN			  PORTG0
+#define SSD_CS_DIR		  DDRG
+#define SSD_CS_PIN		  PORTG0
 
+//============Define  ADC Channel  for Analog Input================
 
-
-
-
+#define ADC_CHANNEL_0 
+#define ADC_CHANNEL_1 
+#define ADC_CHANNEL_2 
+#define ADC_CHANNEL_3 
+#define ADC_CHANNEL_4 
+#define ADC_CHANNEL_5 
+#define ADC_CHANNEL_6 
+#define ADC_CHANNEL_7 
 
 
 

@@ -30,9 +30,9 @@
  *
  */
 
-#include <avr/io.h>
 #include "dev/adc.h"
 
+// ADC conversion at Lower frequncy leads to better and precise result, so set prescaler to higher value 
 /*---------------------------------------------------------------------------*/
 void
 adc_init()
@@ -73,4 +73,140 @@ get_adc(int channel)
   ADCSRA &= ~_BV(ADEN);
   return reading;
 }
+
+
+
+static bool adc_initialized;
+static bool adc_conversion_started;
+
+/*---------------------------------------------------------------------------*/
+
+/**
+ *   \brief This function will init the ADC with the following parameters.
+ *
+ *   \param chan Determines the ADC channel to open.
+ *   \param trig Sets what type of trigger is needed.
+ *   \param ref Sets the proper reference voltage.
+ *   \param prescale Sets the prescale to be used against the XTAL choice.
+ *
+ *   \return 0
+*/
+int
+adc_init(adc_chan_t chan, adc_trig_t trig, adc_ref_t ref, adc_ps_t prescale)
+{
+    /* Enable ADC module */
+    PRR &= ~(1 << PRADC);
+
+    /* Configure */
+    ADCSRA = (1<<ADEN)|prescale;
+    ADMUX = (uint8_t)ref|(uint8_t)chan;
+    ADCSRB = trig;
+
+    adc_initialized = true;
+    adc_conversion_started = false;
+
+    return 0;
+}
+
+/*---------------------------------------------------------------------------*/
+
+/**
+ *   \brief This will disable the adc.
+*/
+void
+adc_deinit(void)
+{
+    /* Disable ADC */
+    ADCSRA &= ~(1<<ADEN);
+    PRR |= (1 << PRADC);
+
+    adc_initialized = false;
+    adc_conversion_started = false;
+}
+
+/*---------------------------------------------------------------------------*/
+
+/**
+ *   \brief This will start an ADC conversion
+ *
+ *   \return 0
+*/
+int
+adc_conversion_start(void)
+{
+    if (adc_initialized == false){
+        return EOF;
+    }
+    adc_conversion_started = true;
+    ADCSRA |= (1<<ADSC);
+    return 0;
+}
+
+/*---------------------------------------------------------------------------*/
+
+/**
+ *   \brief This will read the ADC result during the ADC conversion and return
+ *   the raw ADC conversion result.
+ *
+ *   \param adjust This will Left or Right Adjust the ADC conversion result.
+ *
+ *   \return ADC raw 16-byte ADC conversion result.
+*/
+int16_t
+adc_result_get(adc_adj_t adjust)
+{
+    if (adc_conversion_started == false){
+        return EOF;
+    }
+    if (ADCSRA & (1<<ADSC)){
+        return EOF;
+    }
+    adc_conversion_started = false;
+    ADMUX |= (adjust<<ADLAR);
+    return (int16_t)ADC;
+}
+
+/** \}   */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*---------------------------------------------------------------------------*/
