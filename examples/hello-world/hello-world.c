@@ -37,10 +37,13 @@
  *         Adam Dunkels <adam@sics.se>
  */
 
+#include <avr/io.h>
 #include "contiki.h"
-#include "dev/leds.h"
-
+//#include "dev/leds.h"
+#include "dev/ssd1306.h"
+#include "dev/adc.h"
 #include <stdio.h> /* For printf() */
+#include <stdlib.h> /* For printf() */
 /*---------------------------------------------------------------------------*/
 
 
@@ -56,7 +59,7 @@ PROCESS_THREAD(hello_world_process, ev, data)
 {
   static struct etimer timer;
   static int count=0;
-  etimer_set(&timer, CLOCK_CONF_SECOND/16);
+  etimer_set(&timer, CLOCK_CONF_SECOND);
 
   PROCESS_BEGIN();
   while(1)
@@ -66,9 +69,12 @@ PROCESS_THREAD(hello_world_process, ev, data)
  if (ev==PROCESS_EVENT_TIMER)
    {
 
-   printf("Hello World # %i\n", count);
+  // DDRB |= (1<<PORTB4);
+  // PORTB ^= (1<<PORTB4);   
+
+printf("Hello World # %i\n", count);
    count++;
-   etimer_reset(&timer);
+//   etimer_reset(&timer);
  
   }
 
@@ -80,15 +86,80 @@ PROCESS_THREAD(hello_world_process, ev, data)
 
 PROCESS_THREAD(blink_process, ev, data)
 {
-  PROCESS_BEGIN();
 
   static struct etimer et_blink;
+  etimer_set(&et_blink, CLOCK_SECOND);
+  PROCESS_BEGIN();
+  char lux_value[6];
+  char lux_value2[6];
+  char raw_value[6];
+  char raw_value2[6];
+  uint16_t  adc_data=0;
+  uint16_t  adc_data2=0;
+  float adc_lux=0;
+  float adc_lux2=0;
+
 //  static int blinks = 0;
 
-  while(1) {
-    etimer_set(&et_blink, CLOCK_SECOND/12);
+  ssd1306_clear(); 
+  ssd1306_set_page_address(0);
+  ssd1306_set_column_address(2);
+  ssd1306_write_text("Lumen in Lux:");
+ 
+  ssd1306_set_page_address(2);
+  ssd1306_set_column_address(2);
+  ssd1306_write_text("Raw ADC out :");
 
-    PROCESS_WAIT_EVENT_UNTIL(ev == PROCESS_EVENT_TIMER);
+
+  while(1) {
+
+    PROCESS_WAIT_EVENT();
+if (ev==PROCESS_EVENT_TIMER)
+   {
+ //ssd1306_clear(); 
+//  ssd1306_write_text("A");
+   DDRB |=(1<<PORTB4);
+   PORTB ^= (1<<PORTB4);
+   adc_init();
+   adc_data=get_adc(0);
+   adc_lux=adc_data*0.9765625;
+     
+ /*
+   amps=adc_volt/10000.0;
+   microamps=amps/1000000;
+   lux_data=microamps*2;
+*/
+  itoa(adc_lux, lux_value, 10);
+  ssd1306_set_page_address(0);
+  ssd1306_set_column_address(73);
+//  ssd1306_write_text("Illumination in Lux :");
+  ssd1306_write_text(lux_value);
+
+  itoa(adc_data, raw_value, 10);
+  ssd1306_set_page_address(2);
+  ssd1306_set_column_address(73);
+ // ssd1306_write_text("Raw ADC Readout:");
+  ssd1306_write_text(raw_value);
+
+  adc_init_full(ADC_CHAN_ADC0, ADC_TRIG_FREE_RUN, ADC_REF_AVCC, ADC_PS_64);
+  adc_conversion_start();
+  adc_data2= adc_result_get(ADC_ADJ_RIGHT);
+  adc_lux2=adc_data2*0.9765626;
+
+  itoa(adc_lux2, lux_value2, 10);
+  ssd1306_set_page_address(0);
+  ssd1306_set_column_address(95);
+//  ssd1306_write_text("Illumination in Lux :");
+  ssd1306_write_text(lux_value2);
+
+  itoa(adc_data2, raw_value2, 10);
+  ssd1306_set_page_address(2);
+  ssd1306_set_column_address(95);
+//  ssd1306_write_text("Illumination in Lux :");
+  ssd1306_write_text(raw_value2);
+
+
+  }
 
 
   }

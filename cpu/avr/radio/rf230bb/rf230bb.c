@@ -64,7 +64,7 @@
 #include <io.h>
 #endif
 
-#include "dev/leds.h"
+//#include "dev/leds.h"
 #include "dev/spi.h"
 #include "rf230bb.h"
 
@@ -850,8 +850,8 @@ void rf230_warm_reset(void) {
 #if RF230_CONF_SNEEZER && JACKDAW
   /* Take jackdaw radio out of test mode */
 #warning Manipulating PORTB pins for RF230 Sneezer mode!
-  PORTB &= ~(1<<7);
-  DDRB  &= ~(1<<7);
+  //PORTB &= ~(1<<7);
+ // DDRB  &= ~(1<<7);
 #endif
   
   hal_register_write(RG_IRQ_MASK, RF230_SUPPORTED_INTERRUPT_MASK);
@@ -1807,8 +1807,8 @@ void rf230_start_sneeze(void) {
 //  hal_register_write(RG_TX_2,0x80);    //CW -500KHz
 //  hal_register_write(RG_TX_2,0xC0);    //CW +500KHz
 
-    DDRB  |= 1<<7;                       //Raven USB stick has PB7 connected to the RF230 TST pin.   
-    PORTB |= 1<<7;                       //Raise it to enable continuous TX Test Mode.
+    //DDRB  |= 1<<7;                       //Raven USB stick has PB7 connected to the RF230 TST pin.   
+   // PORTB |= 1<<7;                       //Raise it to enable continuous TX Test Mode.
 
     hal_register_write(0x02,0x09);       //Set TRX_STATE to PLL_ON
     delay_us(TIME_TRX_OFF_TO_PLL_ACTIVE);

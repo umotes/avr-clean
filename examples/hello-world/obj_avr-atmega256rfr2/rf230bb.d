@@ -2,6 +2,7 @@ obj_avr-atmega256rfr2/rf230bb.o: ../../cpu/avr/radio/rf230bb/rf230bb.c \
  ../../cpu/avr/radio/rf230bb/atmega256rfr2_registermap.h \
  ../../core/contiki.h ../../core/contiki-version.h \
  ../../platform/avr-atmega256rfr2/contiki-conf.h \
+ ../../cpu/avr/dev/compiler.h \
  ../../platform/avr-atmega256rfr2/platform-common.h \
  ../../core/contiki-default-conf.h ../../core/sys/process.h \
  ../../core/sys/pt.h ../../core/sys/lc.h ../../core/sys/lc-switch.h \
@@ -10,8 +11,7 @@ obj_avr-atmega256rfr2/rf230bb.o: ../../cpu/avr/radio/rf230bb/rf230bb.c \
  ../../core/sys/etimer.h ../../core/sys/timer.h ../../core/sys/etimer.h \
  ../../core/sys/rtimer.h ../../cpu/avr/rtimer-arch.h ../../core/sys/pt.h \
  ../../core/sys/procinit.h ../../core/sys/loader.h ../../core/sys/clock.h \
- ../../core/sys/energest.h ../../core/sys/rtimer.h \
- ../../platform/avr-atmega256rfr2/dev/leds.h ../../core/dev/spi.h \
+ ../../core/sys/energest.h ../../core/sys/rtimer.h ../../core/dev/spi.h \
  ../../cpu/avr/radio/rf230bb/rf230bb.h ../../cpu/avr/radio/rf230bb/hal.h \
  ../../core/net/packetbuf.h ../../core/net/linkaddr.h \
  ../../core/net/llsec/llsec802154.h ../../core/net/mac/frame802154.h \
@@ -24,6 +24,7 @@ obj_avr-atmega256rfr2/rf230bb.o: ../../cpu/avr/radio/rf230bb/rf230bb.c \
  ../../cpu/avr/radio/rf230bb/atmega256rfr2_registermap.h :
  ../../core/contiki.h ../../core/contiki-version.h :
  ../../platform/avr-atmega256rfr2/contiki-conf.h :
+ ../../cpu/avr/dev/compiler.h :
  ../../platform/avr-atmega256rfr2/platform-common.h :
  ../../core/contiki-default-conf.h ../../core/sys/process.h :
  ../../core/sys/pt.h ../../core/sys/lc.h ../../core/sys/lc-switch.h :
@@ -32,8 +33,7 @@ obj_avr-atmega256rfr2/rf230bb.o: ../../cpu/avr/radio/rf230bb/rf230bb.c \
  ../../core/sys/etimer.h ../../core/sys/timer.h ../../core/sys/etimer.h :
  ../../core/sys/rtimer.h ../../cpu/avr/rtimer-arch.h ../../core/sys/pt.h :
  ../../core/sys/procinit.h ../../core/sys/loader.h ../../core/sys/clock.h :
- ../../core/sys/energest.h ../../core/sys/rtimer.h :
- ../../platform/avr-atmega256rfr2/dev/leds.h ../../core/dev/spi.h :
+ ../../core/sys/energest.h ../../core/sys/rtimer.h ../../core/dev/spi.h :
  ../../cpu/avr/radio/rf230bb/rf230bb.h ../../cpu/avr/radio/rf230bb/hal.h :
  ../../core/net/packetbuf.h ../../core/net/linkaddr.h :
  ../../core/net/llsec/llsec802154.h ../../core/net/mac/frame802154.h :

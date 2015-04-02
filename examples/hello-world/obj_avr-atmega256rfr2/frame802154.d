@@ -1,5 +1,6 @@
 obj_avr-atmega256rfr2/frame802154.o: ../../core/net/mac/frame802154.c \
  ../../core/sys/cc.h ../../platform/avr-atmega256rfr2/contiki-conf.h \
+ ../../cpu/avr/dev/compiler.h \
  ../../platform/avr-atmega256rfr2/platform-common.h \
  ../../core/net/mac/frame802154.h ../../core/net/llsec/llsec802154.h \
  ../../core/net/ip/uip.h ../../core/net/ip/uipopt.h \
@@ -16,6 +17,7 @@ obj_avr-atmega256rfr2/frame802154.o: ../../core/net/mac/frame802154.c \
  ../../core/net/linkaddr.h
 ../../core/net/mac/frame802154.c :
  ../../core/sys/cc.h ../../platform/avr-atmega256rfr2/contiki-conf.h :
+ ../../cpu/avr/dev/compiler.h :
  ../../platform/avr-atmega256rfr2/platform-common.h :
  ../../core/net/mac/frame802154.h ../../core/net/llsec/llsec802154.h :
  ../../core/net/ip/uip.h ../../core/net/ip/uipopt.h :

@@ -1,5 +1,6 @@
 obj_avr-atmega256rfr2/rtimer.o: ../../core/sys/rtimer.c \
  ../../core/sys/rtimer.h ../../platform/avr-atmega256rfr2/contiki-conf.h \
+ ../../cpu/avr/dev/compiler.h \
  ../../platform/avr-atmega256rfr2/platform-common.h \
  ../../cpu/avr/rtimer-arch.h ../../core/contiki.h \
  ../../core/contiki-version.h ../../core/contiki-default-conf.h \
@@ -12,6 +13,7 @@ obj_avr-atmega256rfr2/rtimer.o: ../../core/sys/rtimer.c \
  ../../core/sys/loader.h ../../core/sys/clock.h ../../core/sys/energest.h
 ../../core/sys/rtimer.c :
  ../../core/sys/rtimer.h ../../platform/avr-atmega256rfr2/contiki-conf.h :
+ ../../cpu/avr/dev/compiler.h :
  ../../platform/avr-atmega256rfr2/platform-common.h :
  ../../cpu/avr/rtimer-arch.h ../../core/contiki.h :
  ../../core/contiki-version.h ../../core/contiki-default-conf.h :

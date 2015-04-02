@@ -1,6 +1,7 @@
 obj_avr-atmega256rfr2/nullsec.o: ../../core/net/llsec/nullsec.c \
  ../../core/net/llsec/nullsec.h ../../core/net/llsec/llsec.h \
  ../../core/net/mac/mac.h ../../platform/avr-atmega256rfr2/contiki-conf.h \
+ ../../cpu/avr/dev/compiler.h \
  ../../platform/avr-atmega256rfr2/platform-common.h \
  ../../core/dev/radio.h ../../core/net/mac/frame802154.h \
  ../../core/net/netstack.h ../../core/net/mac/rdc.h \
@@ -20,6 +21,7 @@ obj_avr-atmega256rfr2/nullsec.o: ../../core/net/llsec/nullsec.c \
 ../../core/net/llsec/nullsec.c :
  ../../core/net/llsec/nullsec.h ../../core/net/llsec/llsec.h :
  ../../core/net/mac/mac.h ../../platform/avr-atmega256rfr2/contiki-conf.h :
+ ../../cpu/avr/dev/compiler.h :
  ../../platform/avr-atmega256rfr2/platform-common.h :
  ../../core/dev/radio.h ../../core/net/mac/frame802154.h :
  ../../core/net/netstack.h ../../core/net/mac/rdc.h :

@@ -2,6 +2,7 @@ obj_avr-atmega256rfr2/nullrdc-noframer.o: \
  ../../core/net/mac/nullrdc-noframer.c \
  ../../core/net/mac/nullrdc-noframer.h ../../core/net/mac/rdc.h \
  ../../platform/avr-atmega256rfr2/contiki-conf.h \
+ ../../cpu/avr/dev/compiler.h \
  ../../platform/avr-atmega256rfr2/platform-common.h \
  ../../core/net/mac/mac.h ../../core/dev/radio.h \
  ../../core/net/packetbuf.h ../../core/net/linkaddr.h \
@@ -22,6 +23,7 @@ obj_avr-atmega256rfr2/nullrdc-noframer.o: \
  ../../core/net/mac/nullrdc-noframer.c :
  ../../core/net/mac/nullrdc-noframer.h ../../core/net/mac/rdc.h :
  ../../platform/avr-atmega256rfr2/contiki-conf.h :
+ ../../cpu/avr/dev/compiler.h :
  ../../platform/avr-atmega256rfr2/platform-common.h :
  ../../core/net/mac/mac.h ../../core/dev/radio.h :
  ../../core/net/packetbuf.h ../../core/net/linkaddr.h :

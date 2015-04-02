@@ -2,6 +2,7 @@ obj_avr-atmega256rfr2/sicslowmac.o: \
  ../../core/net/mac/sicslowmac/sicslowmac.c \
  ../../core/net/mac/sicslowmac/sicslowmac.h ../../core/net/mac/rdc.h \
  ../../platform/avr-atmega256rfr2/contiki-conf.h \
+ ../../cpu/avr/dev/compiler.h \
  ../../platform/avr-atmega256rfr2/platform-common.h \
  ../../core/net/mac/mac.h ../../core/dev/radio.h \
  ../../core/net/mac/frame802154.h ../../core/net/packetbuf.h \
@@ -23,6 +24,7 @@ obj_avr-atmega256rfr2/sicslowmac.o: \
  ../../core/net/mac/sicslowmac/sicslowmac.c :
  ../../core/net/mac/sicslowmac/sicslowmac.h ../../core/net/mac/rdc.h :
  ../../platform/avr-atmega256rfr2/contiki-conf.h :
+ ../../cpu/avr/dev/compiler.h :
  ../../platform/avr-atmega256rfr2/platform-common.h :
  ../../core/net/mac/mac.h ../../core/dev/radio.h :
  ../../core/net/mac/frame802154.h ../../core/net/packetbuf.h :

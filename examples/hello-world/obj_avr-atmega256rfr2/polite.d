@@ -2,6 +2,7 @@ obj_avr-atmega256rfr2/polite.o: ../../core/net/rime/polite.c \
  ../../core/net/rime/rime.h ../../core/net/rime/announcement.h \
  ../../core/net/linkaddr.h \
  ../../platform/avr-atmega256rfr2/contiki-conf.h \
+ ../../cpu/avr/dev/compiler.h \
  ../../platform/avr-atmega256rfr2/platform-common.h \
  ../../core/net/rime/collect.h ../../core/net/rime/runicast.h \
  ../../core/net/rime/stunicast.h ../../core/sys/ctimer.h \
@@ -36,6 +37,7 @@ obj_avr-atmega256rfr2/polite.o: ../../core/net/rime/polite.c \
  ../../core/net/rime/rime.h ../../core/net/rime/announcement.h :
  ../../core/net/linkaddr.h :
  ../../platform/avr-atmega256rfr2/contiki-conf.h :
+ ../../cpu/avr/dev/compiler.h :
  ../../platform/avr-atmega256rfr2/platform-common.h :
  ../../core/net/rime/collect.h ../../core/net/rime/runicast.h :
  ../../core/net/rime/stunicast.h ../../core/sys/ctimer.h :

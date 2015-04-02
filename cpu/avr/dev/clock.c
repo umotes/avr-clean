@@ -67,7 +67,7 @@
 #include "sys/clock.h"
 #include "dev/clock-avr.h"
 #include "sys/etimer.h"
-
+#include "dev/compiler.h"
 #include <avr/io.h>
 #include <avr/interrupt.h>
 

@@ -1,6 +1,7 @@
 obj_avr-atmega256rfr2/phase.o: ../../core/net/mac/phase.c \
  ../../core/net/mac/phase.h ../../core/net/linkaddr.h \
  ../../platform/avr-atmega256rfr2/contiki-conf.h \
+ ../../cpu/avr/dev/compiler.h \
  ../../platform/avr-atmega256rfr2/platform-common.h \
  ../../core/sys/timer.h ../../core/sys/clock.h ../../core/sys/rtimer.h \
  ../../cpu/avr/rtimer-arch.h ../../core/lib/list.h ../../core/lib/memb.h \
@@ -22,6 +23,7 @@ obj_avr-atmega256rfr2/phase.o: ../../core/net/mac/phase.c \
 ../../core/net/mac/phase.c :
  ../../core/net/mac/phase.h ../../core/net/linkaddr.h :
  ../../platform/avr-atmega256rfr2/contiki-conf.h :
+ ../../cpu/avr/dev/compiler.h :
  ../../platform/avr-atmega256rfr2/platform-common.h :
  ../../core/sys/timer.h ../../core/sys/clock.h ../../core/sys/rtimer.h :
  ../../cpu/avr/rtimer-arch.h ../../core/lib/list.h ../../core/lib/memb.h :

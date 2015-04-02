@@ -42,9 +42,9 @@
 
 #include "lib/sensors.h"
 
-int8_t ReadTempVal(uint8_t slaveAddr);
-int8_t SetTempLowLimit(uint8_t slaveAddr, uint16_t value);
-int8_t SetTempHiLimit(uint8_t slaveAddr, uint16_t value);
+int8_t ReadTempVal();
+int8_t SetTempLowLimit( uint16_t value);
+int8_t SetTempHiLimit( uint16_t value);
 int8_t ResetTempSenPtr(uint8_t slaveAddr);
 
 #define TEMP_SENS_MBSA   0X96   

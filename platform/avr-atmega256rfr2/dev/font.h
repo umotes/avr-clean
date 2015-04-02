@@ -1,10 +1,13 @@
  #ifndef FONT_H_INCLUDED
  #define FONT_H_INCLUDED
 
+#include "contiki-conf.h"
  /*======= binar input =======*/
  #define bits2bytes(b7,b6,b5,b4,b3,b2,b1,b0) ((uint8_t)((b7<<7)|(b6<<6)|(b5<<5)|(b4<<4)|(b3<<3)|(b2<<2)|(b1<<1)|(b0<<0)))
+ #define bits2words(b15,b14,b13,b12,b11,b10,b9,b8,b7,b6,b5,b4,b3,b2,b1,b0) ((uint8_t)((b15<<15)|(b14<<14)|(b13<<13)|(b12<<12)|(b11<<11)|(b10<<10)|(b9<<9)|(b8<<8)|(b7<<7)|(b6<<6)|(b5<<5)|(b4<<4)|(b3<<3)|(b2<<2)|(b1<<1)|(b0<<0)))
+ 
 
- /*======= Character pointers table =======*/
+/*======= Character pointers table =======*/
  extern uint8_t *font_table[95];
 
  /*======= Characters data =======*/

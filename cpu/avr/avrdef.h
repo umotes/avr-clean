@@ -32,6 +32,7 @@
 #define AVRDEF_H
 
 /* SREG is defined in this file */
+#include "dev/compiler.h"
 #include <avr/io.h>
 #include <avr/interrupt.h>
 

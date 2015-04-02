@@ -24,9 +24,9 @@
 
 #else /* --- GCC --- */
 #ifndef __AVR_ATmega256RFR2__
-#define __AVR_ATmega256RFR2__
+#define __AVR_ATmega256RFR2__  
 #endif
-#include <avr/signal.h>
+//#include <avr/signal.h>
 #include <avr/interrupt.h>
 #include <avr/io.h>
 

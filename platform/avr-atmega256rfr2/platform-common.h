@@ -27,6 +27,9 @@
 // Many of the common definitions must be explicitly enabled by the 
 //  particular PLATFORM_HEADER being used
 ////////////////////////////////////////////////////////////////////////////////
+
+//#include <avr/io.h>
+#include "dev/compiler.h"
 #include <avr/io.h>
 
 #define TRUE  1
@@ -46,25 +49,35 @@
 #define READBIT(reg, bit)     (reg & (BIT(bit)))
 #define READBITS(reg, bits)   (reg & (bits))
 
-
+#define EXT_3
 #define MAX_INT8U_VALUE 0xFF
 #define MAX_INT16U_VALUE 0xFFFF
 #define MAX_INT32U_VALUE 0xFFFFFFFF
 
 // ========= PORT B Assignement and Description =====================
 
-
+#ifdef EXT_3
 #define SSD_MOSI_PORT		  PORTB
 #define SSD_MOSI_DIR		  DDRB
 #define SSD_MOSI_PIN		  PORTB2
 
-#define SSD_MISO_PORT		  PORTB
-#define SSD_MISO_DIR		  DDRB
-#define SSD_MISO_PIN		  PORTB3
-
 #define SSD_CLK_PORT		  PORTB
 #define SSD_CLK_DIR 		  DDRB
 #define SSD_CLK_PIN 		  PORTB1
+#endif
+
+
+#ifdef EXT_3
+#define SSD_MOSI_PORT             PORTB
+#define SSD_MOSI_DIR              DDRB
+#define SSD_MOSI_PIN              PORTB2
+
+
+#define SSD_CLK_PORT              PORTB
+#define SSD_CLK_DIR               DDRB
+#define SSD_CLK_PIN               PORTB1
+#endif
+
 
 
 // ========= PORT C Assignement and Description =====================
@@ -72,25 +85,34 @@
 
 
 // ========= PORT D Assignement and Description =====================
-
+#ifdef EXT_1
 #define SSD_RES_PORT		  PORTD
 #define SSD_RES_DIR 		  DDRD
 #define SSD_RES_PIN 		  PORTD5
+#endif
+
+#ifdef EXT_3
+#define SSD_RES_PORT              PORTD
+#define SSD_RES_DIR               DDRD
+#define SSD_RES_PIN               PORTD7
+#endif
+
+
+
 
 // ========= PORT E Assignement and Description =====================
-
+#ifdef EXT_1
 #define SSD_DC_PORT 		  PORTE
 #define SSD_DC_DIR		  DDRE
 #define SSD_DC_PIN		  PORTE2
+#endif
 
+#ifdef EXT_3
+#define SSD_DC_PORT               PORTB
+#define SSD_DC_DIR                DDRB
+#define SSD_DC_PIN                PORTB7
+#endif
 
-#define LED_STATUS_PORT		  PORTE
-#define LED_STATUS_DIR		  DDRE
-#define LED_STATUS_PIN		  PORTE4
-
-#define LED_OLED3_PORT		  PORTE
-#define LED_OLED3_DIR		  DDRE
-#define LED_OLED3_PIN		  PORTE4
 
 
 
@@ -99,27 +121,17 @@
 
 
 // ========= PORT G Assignement and Description =====================
-
+#ifdef EXT_1
 #define SSD_CS_PORT 		  PORTG
 #define SSD_CS_DIR		  DDRG
 #define SSD_CS_PIN		  PORTG0
+#endif
 
-//============Define  ADC Channel  for Analog Input================
+#ifdef EXT_3
+#define SSD_CS_PORT               PORTG
+#define SSD_CS_DIR                DDRG
+#define SSD_CS_PIN                PORTG2
+#endif
 
-#define ADC_CHANNEL_0 
-#define ADC_CHANNEL_1 
-#define ADC_CHANNEL_2 
-#define ADC_CHANNEL_3 
-#define ADC_CHANNEL_4 
-#define ADC_CHANNEL_5 
-#define ADC_CHANNEL_6 
-#define ADC_CHANNEL_7 
-
-
-
-
-#endif //PLATFORMCOMMON_H_
-
-/** @}  END addtogroup */
 /** @} */
-
+#endif

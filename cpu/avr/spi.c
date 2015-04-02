@@ -47,12 +47,12 @@ unsigned char spi_busy = 0;
 void
 spi_init(void)
 {
-  /* Initalize ports for communication with SPI units. */
+..  /* Initalize ports for communication with SPI units. */
   /* CSN=SS and must be output when master! */
-  DDRB  |= BV(MOSI) | BV(SCK) | BV(CSN);
-  PORTB |= BV(MOSI) | BV(SCK);
+//  DDRB  |= BV(MOSI) | BV(SCK) | BV(CSN);
+ // PORTB |= BV(MOSI) | BV(SCK);
 
   /* Enables SPI, selects "master", clock rate FCK / 2, and SPI mode 0 */
-  SPCR = BV(SPE) | BV(MSTR);
-  SPSR = BV(SPI2X);
+ // SPCR = BV(SPE) | BV(MSTR);
+//  SPSR = BV(SPI2X);
 }

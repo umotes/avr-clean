@@ -29,6 +29,8 @@
  * This file is part of the Contiki operating system.
  *
  */
+
+
 #define PRINTF(FORMAT,args...) printf_P(PSTR(FORMAT),##args)
 
 #define ANNOUNCE_BOOT 1    //adds about 600 bytes to program size
@@ -66,7 +68,7 @@
 #include "contiki-net.h"
 #include "contiki-lib.h"
 #include "net/ip/uip.h"
-#include "dev/leds.h"
+//#include "dev/leds.h"
 
 #include "dev/rs232.h"
 #include "dev/serial-line.h"
@@ -150,7 +152,7 @@ SIGNATURE = {
 
 #if 1
 /* JTAG, SPI enabled, Internal RC osc, Boot flash size 4K, 6CK+65msec delay, brownout disabled */
-FUSES ={.low = 0xe2, .high = 0x99, .extended = 0xff,};
+FUSES ={.low = 0xc2, .high = 0x9D, .extended = 0xfe,};
 #else
 /* JTAG+SPI, Boot 4096 words @ $F000, Internal  oscillator, startup 6 CK +0 ms, Brownout 1.8 volts */
 FUSES ={.low = 0xC2, .high = 0x99, .extended = 0xfe,};

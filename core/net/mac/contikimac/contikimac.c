@@ -40,7 +40,7 @@
  */
 
 #include "contiki-conf.h"
-#include "dev/leds.h"
+//#include "dev/leds.h"
 #include "dev/radio.h"
 #include "dev/watchdog.h"
 #include "lib/random.h"

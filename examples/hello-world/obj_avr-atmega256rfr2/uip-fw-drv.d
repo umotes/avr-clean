@@ -2,6 +2,7 @@ obj_avr-atmega256rfr2/uip-fw-drv.o: ../../core/net/ipv4/uip-fw-drv.c \
  ../../core/net/ipv4/uip-fw.h ../../core/net/ip/uip.h \
  ../../core/net/ip/uipopt.h \
  ../../platform/avr-atmega256rfr2/contiki-conf.h \
+ ../../cpu/avr/dev/compiler.h \
  ../../platform/avr-atmega256rfr2/platform-common.h \
  ../../core/net/ip/tcpip.h ../../core/contiki.h \
  ../../core/contiki-version.h ../../core/contiki-default-conf.h \
@@ -17,6 +18,7 @@ obj_avr-atmega256rfr2/uip-fw-drv.o: ../../core/net/ipv4/uip-fw-drv.c \
  ../../core/net/ipv4/uip-fw.h ../../core/net/ip/uip.h :
  ../../core/net/ip/uipopt.h :
  ../../platform/avr-atmega256rfr2/contiki-conf.h :
+ ../../cpu/avr/dev/compiler.h :
  ../../platform/avr-atmega256rfr2/platform-common.h :
  ../../core/net/ip/tcpip.h ../../core/contiki.h :
  ../../core/contiki-version.h ../../core/contiki-default-conf.h :

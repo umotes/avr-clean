@@ -2,6 +2,7 @@ obj_avr-atmega256rfr2/uip-ds6.o: ../../core/net/ipv6/uip-ds6.c \
  ../../core/lib/random.h ../../core/net/ipv6/uip-nd6.h \
  ../../core/net/ip/uip.h ../../core/net/ip/uipopt.h \
  ../../platform/avr-atmega256rfr2/contiki-conf.h \
+ ../../cpu/avr/dev/compiler.h \
  ../../platform/avr-atmega256rfr2/platform-common.h \
  ../../core/net/ip/tcpip.h ../../core/contiki.h \
  ../../core/contiki-version.h ../../core/contiki-default-conf.h \
@@ -25,6 +26,7 @@ obj_avr-atmega256rfr2/uip-ds6.o: ../../core/net/ipv6/uip-ds6.c \
  ../../core/lib/random.h ../../core/net/ipv6/uip-nd6.h :
  ../../core/net/ip/uip.h ../../core/net/ip/uipopt.h :
  ../../platform/avr-atmega256rfr2/contiki-conf.h :
+ ../../cpu/avr/dev/compiler.h :
  ../../platform/avr-atmega256rfr2/platform-common.h :
  ../../core/net/ip/tcpip.h ../../core/contiki.h :
  ../../core/contiki-version.h ../../core/contiki-default-conf.h :

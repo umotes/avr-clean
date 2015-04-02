@@ -1,6 +1,7 @@
 obj_avr-atmega256rfr2/channel.o: ../../core/net/rime/channel.c \
  ../../core/net/rime/chameleon.h ../../core/net/rime/channel.h \
  ../../platform/avr-atmega256rfr2/contiki-conf.h \
+ ../../cpu/avr/dev/compiler.h \
  ../../platform/avr-atmega256rfr2/platform-common.h \
  ../../core/net/packetbuf.h ../../core/net/linkaddr.h \
  ../../core/net/llsec/llsec802154.h ../../core/net/mac/frame802154.h \
@@ -35,6 +36,7 @@ obj_avr-atmega256rfr2/channel.o: ../../core/net/rime/channel.c \
 ../../core/net/rime/channel.c :
  ../../core/net/rime/chameleon.h ../../core/net/rime/channel.h :
  ../../platform/avr-atmega256rfr2/contiki-conf.h :
+ ../../cpu/avr/dev/compiler.h :
  ../../platform/avr-atmega256rfr2/platform-common.h :
  ../../core/net/packetbuf.h ../../core/net/linkaddr.h :
  ../../core/net/llsec/llsec802154.h ../../core/net/mac/frame802154.h :

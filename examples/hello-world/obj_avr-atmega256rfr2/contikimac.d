@@ -1,9 +1,9 @@
 obj_avr-atmega256rfr2/contikimac.o: \
  ../../core/net/mac/contikimac/contikimac.c \
  ../../platform/avr-atmega256rfr2/contiki-conf.h \
+ ../../cpu/avr/dev/compiler.h \
  ../../platform/avr-atmega256rfr2/platform-common.h \
- ../../platform/avr-atmega256rfr2/dev/leds.h ../../core/dev/radio.h \
- ../../core/dev/watchdog.h ../../core/lib/random.h \
+ ../../core/dev/radio.h ../../core/dev/watchdog.h ../../core/lib/random.h \
  ../../core/net/mac/mac-sequence.h \
  ../../core/net/mac/contikimac/contikimac.h ../../core/sys/rtimer.h \
  ../../cpu/avr/rtimer-arch.h ../../core/net/mac/rdc.h \
@@ -39,9 +39,9 @@ obj_avr-atmega256rfr2/contikimac.o: \
  ../../core/net/rime/trickle.h ../../core/sys/compower.h
  ../../core/net/mac/contikimac/contikimac.c :
  ../../platform/avr-atmega256rfr2/contiki-conf.h :
+ ../../cpu/avr/dev/compiler.h :
  ../../platform/avr-atmega256rfr2/platform-common.h :
- ../../platform/avr-atmega256rfr2/dev/leds.h ../../core/dev/radio.h :
- ../../core/dev/watchdog.h ../../core/lib/random.h :
+ ../../core/dev/radio.h ../../core/dev/watchdog.h ../../core/lib/random.h :
  ../../core/net/mac/mac-sequence.h :
  ../../core/net/mac/contikimac/contikimac.h ../../core/sys/rtimer.h :
  ../../cpu/avr/rtimer-arch.h ../../core/net/mac/rdc.h :

@@ -3,6 +3,7 @@ obj_avr-atmega256rfr2/contikimac-framer.o: \
  ../../core/net/mac/contikimac/contikimac-framer.h \
  ../../core/net/mac/framer.h ../../core/net/packetbuf.h \
  ../../platform/avr-atmega256rfr2/contiki-conf.h \
+ ../../cpu/avr/dev/compiler.h \
  ../../platform/avr-atmega256rfr2/platform-common.h \
  ../../core/net/linkaddr.h ../../core/net/llsec/llsec802154.h \
  ../../core/net/mac/frame802154.h ../../core/net/ip/uip.h \
@@ -22,6 +23,7 @@ obj_avr-atmega256rfr2/contikimac-framer.o: \
  ../../core/net/mac/contikimac/contikimac-framer.h :
  ../../core/net/mac/framer.h ../../core/net/packetbuf.h :
  ../../platform/avr-atmega256rfr2/contiki-conf.h :
+ ../../cpu/avr/dev/compiler.h :
  ../../platform/avr-atmega256rfr2/platform-common.h :
  ../../core/net/linkaddr.h ../../core/net/llsec/llsec802154.h :
  ../../core/net/mac/frame802154.h ../../core/net/ip/uip.h :

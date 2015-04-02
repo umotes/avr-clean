@@ -1,6 +1,7 @@
 obj_avr-atmega256rfr2/route.o: ../../core/net/rime/route.c \
  ../../core/lib/list.h ../../core/lib/memb.h ../../core/sys/cc.h \
  ../../platform/avr-atmega256rfr2/contiki-conf.h \
+ ../../cpu/avr/dev/compiler.h \
  ../../platform/avr-atmega256rfr2/platform-common.h \
  ../../core/sys/ctimer.h ../../core/sys/etimer.h ../../core/sys/timer.h \
  ../../core/sys/clock.h ../../core/sys/process.h ../../core/sys/pt.h \
@@ -9,6 +10,7 @@ obj_avr-atmega256rfr2/route.o: ../../core/net/rime/route.c \
 ../../core/net/rime/route.c :
  ../../core/lib/list.h ../../core/lib/memb.h ../../core/sys/cc.h :
  ../../platform/avr-atmega256rfr2/contiki-conf.h :
+ ../../cpu/avr/dev/compiler.h :
  ../../platform/avr-atmega256rfr2/platform-common.h :
  ../../core/sys/ctimer.h ../../core/sys/etimer.h ../../core/sys/timer.h :
  ../../core/sys/clock.h ../../core/sys/process.h ../../core/sys/pt.h :

@@ -92,7 +92,7 @@ typedef enum {
     ADC_ADJ_LEFT = 1
 } adc_adj_t;
 
-int adc_init(adc_chan_t chan, adc_trig_t trig, adc_ref_t ref, adc_ps_t prescale);
+int adc_init_full(adc_chan_t chan, adc_trig_t trig, adc_ref_t ref, adc_ps_t prescale);
 void adc_deinit(void);
 int adc_conversion_start(void);
 int16_t adc_result_get(adc_adj_t adjust);

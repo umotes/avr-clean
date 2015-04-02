@@ -1,6 +1,7 @@
 obj_avr-atmega256rfr2/uip-udp-packet.o: \
  ../../core/net/ip/uip-udp-packet.c \
  ../../platform/avr-atmega256rfr2/contiki-conf.h \
+ ../../cpu/avr/dev/compiler.h \
  ../../platform/avr-atmega256rfr2/platform-common.h \
  ../../core/net/ip/uip-udp-packet.h ../../core/net/ip/uip.h \
  ../../core/net/ip/uipopt.h ../../core/net/ip/tcpip.h \
@@ -21,6 +22,7 @@ obj_avr-atmega256rfr2/uip-udp-packet.o: \
  ../../core/net/ipv6/multicast/uip-mcast6-stats.h
  ../../core/net/ip/uip-udp-packet.c :
  ../../platform/avr-atmega256rfr2/contiki-conf.h :
+ ../../cpu/avr/dev/compiler.h :
  ../../platform/avr-atmega256rfr2/platform-common.h :
  ../../core/net/ip/uip-udp-packet.h ../../core/net/ip/uip.h :
  ../../core/net/ip/uipopt.h ../../core/net/ip/tcpip.h :

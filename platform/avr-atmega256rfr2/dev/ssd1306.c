@@ -1,48 +1,98 @@
-#include "ssd1306.h"
+#include "dev/ssd1306.h"
 #include "font.h"
+#include <avr/io.h>
 
 void ssd1306_reset_clear(void)
         {
+        
+   #ifdef EXT_3
+        DDRD |= (1<<PORTD7);
+        PORTD &= ~(1<<PORTD7);
+   #endif
+
+   #ifdef EXT_1
         SSD_RES_DIR |= (1<<SSD_RES_PIN); // Reset Pin is set as Output
-        SSD_RES_PORT&=~(1<<SSD_RES_PIN); // Reset  Pin Pulled Low
-        }
+        SSD_RES_PORT &=~(1<<SSD_RES_PIN); // Reset  Pin Pulled Low
+   #endif
+         }
 
 
  void ssd1306_reset_set(void)
         {
+   
+   #ifdef EXT_3
+        DDRD |= (1<<PORTD7);
+        PORTD |= (1<<PORTD7);
+
+   #endif
+
+   #ifdef EXT_1
         SSD_RES_DIR |= (1<<SSD_RES_PIN); // Reset Pin is set as Output
         SSD_RES_PORT |= (1<<SSD_RES_PIN); // Reset  Pin Pulled HigH
 
+   #endif
         }
 
 
  void ssd1306_sel_cmd(void)
         {
 //Set High  for Data
-        SSD_DC_DIR |= (1<<SSD_DC_PIN); // Reset Pin is set as Output
-        SSD_DC_PORT&=~(1<<SSD_DC_PIN); // Reset  Pin Pulled Low
 
+   #ifdef EXT_3
+       DDRB |= (1<<PORTB7);
+       PORTB &= ~(1<<PORTB7);
+   #endif
+   #ifdef EXT_1
+       SSD_DC_DIR |= (1<<SSD_DC_PIN); // Reset Pin is set as Output
+       SSD_DC_PORT &= ~(1<<SSD_DC_PIN); // Reset  Pin Pulled Low
+   #endif
         }
 
  void ssd1306_sel_data(void)
         {
 //Low for COmmand
-        SSD_RES_DIR |= (1<<SSD_DC_PIN); // Reset Pin is set as Output
-        SSD_RES_PORT|= (1<<SSD_DC_PIN); // Reset        Pin Pulled Low
+      
+   #ifdef EXT_3
+       DDRB |= (1<<PB7);
+       PORTB |= (1<<PB7);
 
+   #endif
+   
+   #ifdef EXT_1
+       SSD_DC_DIR |= (1<<SSD_DC_PIN); // Reset Pin is set as Output
+       SSD_DC_PORT |= (1<<SSD_DC_PIN); // Reset        Pin Pulled Low
+
+   #endif
         }
 
  void spi_deselect_device(void)
         {
-        SSD_CS_DIR |= (1<<SSD_CS_PIN);
-        SSD_CS_PORT|= (1<<SSD_CS_PIN);
+   
+   #ifdef EXT_3
+DDRG |= (1<<PORTG4);
+PORTG |= (1<<PORTG4);
 
+   #endif
+
+
+   #ifdef EXT_1
+       SSD_CS_DIR |= (1<<SSD_CS_PIN);
+       SSD_CS_PORT|= (1<<SSD_CS_PIN);
+
+   #endif
         }
 
  void spi_select_device(void)
          {
-        SSD_CS_DIR |= (1<<SSD_CS_PIN);
-        SSD_CS_PORT &= ~(1<<SSD_CS_PIN);
+   #ifdef EXT_3
+   DDRG |= (1<<PORTG4);
+   PORTG &= ~(1<<PORTG4);
+   #endif
+
+   #ifdef EXT_1
+   SSD_CS_DIR |= (1<<SSD_CS_PIN);
+   SSD_CS_PORT &= ~(1<<SSD_CS_PIN);
+   #endif
 
         }
 
@@ -184,15 +234,18 @@ void ssd1306_reset_clear(void)
  {
    /* Initalize ports for communication with SPI units. */
    /* CSN=SS and must be output when master! */
-   SSD_MOSI_DIR  |= BV(SSD_MOSI_PIN) | BV(SSD_CLK_PIN);
-   SSD_MOSI_PORT  |= BV(SSD_MOSI_PIN) | BV(SSD_CLK_PIN);
+ //  DDRB  |= (1<<PORTB2) | (1<<PORTB1);
+  SSD_MOSI_DIR |= (1<<SSD_MOSI_PIN) | (1<<SSD_CLK_PIN);
+//   PORTB  |= (1<<PORTB2) | (1<<PORTB1);
 
-   SSD_CS_DIR  |= BV(SSD_CS_PIN);
-   SSD_CS_DIR  |= BV(SSD_CS_PIN);
+//   DDRG  |= (1<<SSD_CS_PIN);
+//   PORTG  &= ~ (1<<SSD_CS_PIN);
 
+   SSD_CS_DIR  |= (1<<SSD_CS_PIN);
+   SSD_CS_PORT  &= ~ (1<<SSD_CS_PIN);
    /* Enables SPI, selects "master", clock rate FCK / 2, and SPI mode 0 */
-   SPCR = BV(SPE) | BV(MSTR);
-   SPSR = BV(SPI2X);
+   SPCR = (1<<SPE) | (1<<MSTR)|(1<<SPR0);
+   SPSR = (1<<SPI2X);
  }
 
  

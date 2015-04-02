@@ -2,6 +2,7 @@ obj_avr-atmega256rfr2/tcpip.o: ../../core/net/ip/tcpip.c \
  ../../core/contiki-net.h ../../core/contiki.h \
  ../../core/contiki-version.h \
  ../../platform/avr-atmega256rfr2/contiki-conf.h \
+ ../../cpu/avr/dev/compiler.h \
  ../../platform/avr-atmega256rfr2/platform-common.h \
  ../../core/contiki-default-conf.h ../../core/sys/process.h \
  ../../core/sys/pt.h ../../core/sys/lc.h ../../core/sys/lc-switch.h \
@@ -54,6 +55,7 @@ obj_avr-atmega256rfr2/tcpip.o: ../../core/net/ip/tcpip.c \
  ../../core/contiki-net.h ../../core/contiki.h :
  ../../core/contiki-version.h :
  ../../platform/avr-atmega256rfr2/contiki-conf.h :
+ ../../cpu/avr/dev/compiler.h :
  ../../platform/avr-atmega256rfr2/platform-common.h :
  ../../core/contiki-default-conf.h ../../core/sys/process.h :
  ../../core/sys/pt.h ../../core/sys/lc.h ../../core/sys/lc-switch.h :

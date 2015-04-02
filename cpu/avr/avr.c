@@ -1,3 +1,4 @@
+#include "dev/compiler.h"
 #include <avr/io.h>
 
 #include "contiki-conf.h"

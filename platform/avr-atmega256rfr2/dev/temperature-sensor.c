@@ -67,8 +67,7 @@ const struct sensors_sensor temperature_sensor;
 static int
 value(int type)
 {
-  uint8_t slaveAddr=type;
-  return ReadTempVal(slaveAddr);
+  return ReadTempVal();
 } 
 /*---------------------------------------------------------------------------*/
 
@@ -128,10 +127,10 @@ SENSORS_SENSOR(temperature_sensor, TEMPERATURE_SENSOR,
 /*---------------------------------------------------------------------------*/
 //   Read Sensor Temperature 
 /*---------------------------------------------------------------------------*/ 
-int8_t ReadTempVal(uint8_t slaveAddr)
+int8_t ReadTempVal()
 {
   //  uint8_t adressRead = b10010011;
-//  uint8_t slaveAddr = 0b1001011; //   0b10010001; 
+  uint8_t slaveAddr = 0b1001011; //   0b10010001; 
   uint8_t temp;
   uint16_t tempData = 0;
   TWIInit();
@@ -171,12 +170,12 @@ int8_t ReadTempVal(uint8_t slaveAddr)
 /*---------------------------------------------------------------------------*/
 //   Configure Temperature Low Limit Register
 /*---------------------------------------------------------------------------*/
-int8_t SetTempLowLimit(uint8_t slaveAddr,uint16_t value)
+int8_t SetTempLowLimit(uint16_t value)
 {
 
 // Temp Low Limit Configuratuation register sub address
   uint8_t loLmtSubAddr = TEMP_LOWLMT_ADDR; 
-//  uint8_t slaveAddr = 0b1001011; //   0b10010001; 
+  uint8_t slaveAddr = 0b1001011; //   0b10010001; 
   uint16_t temp;
   TWIInit();
 
@@ -221,11 +220,11 @@ int8_t SetTempLowLimit(uint8_t slaveAddr,uint16_t value)
 /*---------------------------------------------------------------------------*/
 //   Configure Temperature High Limit Register
 /*---------------------------------------------------------------------------*/
-int8_t SetTempHiLimit(uint8_t slaveAddr, uint16_t value)
+int8_t SetTempHiLimit(uint16_t value)
 {
 // Temp Low Limit Configuratuation register sub address
   uint8_t hiLmtSubAddr = TEMP_HILMT_ADDR;
-//  uint8_t slaveAddr = 0b1001011; //   0b10010001; 
+  uint8_t slaveAddr = 0b1001011; //   0b10010001; 
   uint8_t temp;
 
 TWIInit();

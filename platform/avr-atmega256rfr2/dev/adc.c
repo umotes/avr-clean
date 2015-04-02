@@ -92,10 +92,10 @@ static bool adc_conversion_started;
  *   \return 0
 */
 int
-adc_init(adc_chan_t chan, adc_trig_t trig, adc_ref_t ref, adc_ps_t prescale)
+adc_init_full(adc_chan_t chan, adc_trig_t trig, adc_ref_t ref, adc_ps_t prescale)
 {
     /* Enable ADC module */
-    PRR &= ~(1 << PRADC);
+    PRR0 &= ~(1 << PRADC);
 
     /* Configure */
     ADCSRA = (1<<ADEN)|prescale;
@@ -118,7 +118,7 @@ adc_deinit(void)
 {
     /* Disable ADC */
     ADCSRA &= ~(1<<ADEN);
-    PRR |= (1 << PRADC);
+    PRR0 |= (1 << PRADC);
 
     adc_initialized = false;
     adc_conversion_started = false;
@@ -155,6 +155,7 @@ adc_conversion_start(void)
 int16_t
 adc_result_get(adc_adj_t adjust)
 {
+  uint16_t reading;
     if (adc_conversion_started == false){
         return EOF;
     }
@@ -162,8 +163,12 @@ adc_result_get(adc_adj_t adjust)
         return EOF;
     }
     adc_conversion_started = false;
-    ADMUX |= (adjust<<ADLAR);
-    return (int16_t)ADC;
+//    ADMUX |= (adjust<<ADLAR);
+  //  return (int16_t)ADC;
+reading = ADCL;
+  /* Get last two bits. */
+  reading |= (ADCH & 3) << 8;
+return reading;
 }
 
 /** \}   */

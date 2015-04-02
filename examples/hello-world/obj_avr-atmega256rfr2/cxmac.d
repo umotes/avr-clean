@@ -1,19 +1,19 @@
 obj_avr-atmega256rfr2/cxmac.o: ../../core/net/mac/cxmac/cxmac.c \
- ../../platform/avr-atmega256rfr2/dev/leds.h \
- ../../platform/avr-atmega256rfr2/contiki-conf.h \
- ../../platform/avr-atmega256rfr2/platform-common.h \
  ../../core/dev/radio.h ../../core/dev/watchdog.h \
- ../../core/net/netstack.h ../../core/net/llsec/llsec.h \
- ../../core/net/mac/mac.h ../../core/net/mac/rdc.h \
- ../../core/net/mac/framer.h ../../core/lib/random.h \
- ../../core/net/mac/cxmac/cxmac.h ../../core/sys/rtimer.h \
- ../../cpu/avr/rtimer-arch.h ../../core/net/rime/rime.h \
- ../../core/net/rime/announcement.h ../../core/net/linkaddr.h \
- ../../core/net/rime/collect.h ../../core/net/rime/runicast.h \
- ../../core/net/rime/stunicast.h ../../core/sys/ctimer.h \
- ../../core/sys/etimer.h ../../core/sys/timer.h ../../core/sys/clock.h \
- ../../core/sys/process.h ../../core/sys/pt.h ../../core/sys/lc.h \
- ../../core/sys/lc-switch.h ../../core/sys/cc.h \
+ ../../core/net/netstack.h \
+ ../../platform/avr-atmega256rfr2/contiki-conf.h \
+ ../../cpu/avr/dev/compiler.h \
+ ../../platform/avr-atmega256rfr2/platform-common.h \
+ ../../core/net/llsec/llsec.h ../../core/net/mac/mac.h \
+ ../../core/net/mac/rdc.h ../../core/net/mac/framer.h \
+ ../../core/lib/random.h ../../core/net/mac/cxmac/cxmac.h \
+ ../../core/sys/rtimer.h ../../cpu/avr/rtimer-arch.h \
+ ../../core/net/rime/rime.h ../../core/net/rime/announcement.h \
+ ../../core/net/linkaddr.h ../../core/net/rime/collect.h \
+ ../../core/net/rime/runicast.h ../../core/net/rime/stunicast.h \
+ ../../core/sys/ctimer.h ../../core/sys/etimer.h ../../core/sys/timer.h \
+ ../../core/sys/clock.h ../../core/sys/process.h ../../core/sys/pt.h \
+ ../../core/sys/lc.h ../../core/sys/lc-switch.h ../../core/sys/cc.h \
  ../../core/net/rime/unicast.h ../../core/net/rime/broadcast.h \
  ../../core/net/rime/abc.h ../../core/net/packetbuf.h \
  ../../core/net/llsec/llsec802154.h ../../core/net/mac/frame802154.h \
@@ -37,21 +37,21 @@ obj_avr-atmega256rfr2/cxmac.o: ../../core/net/mac/cxmac/cxmac.c \
  ../../core/net/rime/rucb.h ../../core/net/rime/timesynch.h \
  ../../core/net/rime/trickle.h ../../core/sys/compower.h
 ../../core/net/mac/cxmac/cxmac.c :
- ../../platform/avr-atmega256rfr2/dev/leds.h :
- ../../platform/avr-atmega256rfr2/contiki-conf.h :
- ../../platform/avr-atmega256rfr2/platform-common.h :
  ../../core/dev/radio.h ../../core/dev/watchdog.h :
- ../../core/net/netstack.h ../../core/net/llsec/llsec.h :
- ../../core/net/mac/mac.h ../../core/net/mac/rdc.h :
- ../../core/net/mac/framer.h ../../core/lib/random.h :
- ../../core/net/mac/cxmac/cxmac.h ../../core/sys/rtimer.h :
- ../../cpu/avr/rtimer-arch.h ../../core/net/rime/rime.h :
- ../../core/net/rime/announcement.h ../../core/net/linkaddr.h :
- ../../core/net/rime/collect.h ../../core/net/rime/runicast.h :
- ../../core/net/rime/stunicast.h ../../core/sys/ctimer.h :
- ../../core/sys/etimer.h ../../core/sys/timer.h ../../core/sys/clock.h :
- ../../core/sys/process.h ../../core/sys/pt.h ../../core/sys/lc.h :
- ../../core/sys/lc-switch.h ../../core/sys/cc.h :
+ ../../core/net/netstack.h :
+ ../../platform/avr-atmega256rfr2/contiki-conf.h :
+ ../../cpu/avr/dev/compiler.h :
+ ../../platform/avr-atmega256rfr2/platform-common.h :
+ ../../core/net/llsec/llsec.h ../../core/net/mac/mac.h :
+ ../../core/net/mac/rdc.h ../../core/net/mac/framer.h :
+ ../../core/lib/random.h ../../core/net/mac/cxmac/cxmac.h :
+ ../../core/sys/rtimer.h ../../cpu/avr/rtimer-arch.h :
+ ../../core/net/rime/rime.h ../../core/net/rime/announcement.h :
+ ../../core/net/linkaddr.h ../../core/net/rime/collect.h :
+ ../../core/net/rime/runicast.h ../../core/net/rime/stunicast.h :
+ ../../core/sys/ctimer.h ../../core/sys/etimer.h ../../core/sys/timer.h :
+ ../../core/sys/clock.h ../../core/sys/process.h ../../core/sys/pt.h :
+ ../../core/sys/lc.h ../../core/sys/lc-switch.h ../../core/sys/cc.h :
  ../../core/net/rime/unicast.h ../../core/net/rime/broadcast.h :
  ../../core/net/rime/abc.h ../../core/net/packetbuf.h :
  ../../core/net/llsec/llsec802154.h ../../core/net/mac/frame802154.h :

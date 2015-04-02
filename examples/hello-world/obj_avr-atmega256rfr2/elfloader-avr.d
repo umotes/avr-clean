@@ -2,6 +2,7 @@ obj_avr-atmega256rfr2/elfloader-avr.o: ../../core/loader/elfloader-avr.c \
  ../../core/loader/elfloader-arch.h ../../core/loader/elfloader.h \
  ../../core/cfs/cfs.h ../../core/contiki.h ../../core/contiki-version.h \
  ../../platform/avr-atmega256rfr2/contiki-conf.h \
+ ../../cpu/avr/dev/compiler.h \
  ../../platform/avr-atmega256rfr2/platform-common.h \
  ../../core/contiki-default-conf.h ../../core/sys/process.h \
  ../../core/sys/pt.h ../../core/sys/lc.h ../../core/sys/lc-switch.h \
@@ -15,6 +16,7 @@ obj_avr-atmega256rfr2/elfloader-avr.o: ../../core/loader/elfloader-avr.c \
  ../../core/loader/elfloader-arch.h ../../core/loader/elfloader.h :
  ../../core/cfs/cfs.h ../../core/contiki.h ../../core/contiki-version.h :
  ../../platform/avr-atmega256rfr2/contiki-conf.h :
+ ../../cpu/avr/dev/compiler.h :
  ../../platform/avr-atmega256rfr2/platform-common.h :
  ../../core/contiki-default-conf.h ../../core/sys/process.h :
  ../../core/sys/pt.h ../../core/sys/lc.h ../../core/sys/lc-switch.h :

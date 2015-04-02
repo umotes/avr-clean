@@ -35,7 +35,7 @@
  *
  */
 
-#include <avr/io.h>
+#include "dev/compiler.h"
 #include <avr/interrupt.h>
 #include <stdio.h>
 #include "sys/mt.h"

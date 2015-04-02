@@ -1,5 +1,6 @@
 obj_avr-atmega256rfr2/compower.o: ../../core/sys/compower.c \
  ../../platform/avr-atmega256rfr2/contiki-conf.h \
+ ../../cpu/avr/dev/compiler.h \
  ../../platform/avr-atmega256rfr2/platform-common.h \
  ../../core/sys/energest.h ../../core/sys/rtimer.h \
  ../../cpu/avr/rtimer-arch.h ../../core/sys/compower.h \
@@ -17,6 +18,7 @@ obj_avr-atmega256rfr2/compower.o: ../../core/sys/compower.c \
  ../../core/sys/loader.h ../../core/sys/clock.h ../../core/sys/energest.h
 ../../core/sys/compower.c :
  ../../platform/avr-atmega256rfr2/contiki-conf.h :
+ ../../cpu/avr/dev/compiler.h :
  ../../platform/avr-atmega256rfr2/platform-common.h :
  ../../core/sys/energest.h ../../core/sys/rtimer.h :
  ../../cpu/avr/rtimer-arch.h ../../core/sys/compower.h :
