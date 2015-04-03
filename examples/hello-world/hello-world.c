@@ -143,7 +143,11 @@ if (ev==PROCESS_EVENT_TIMER)
 
   adc_init_full(ADC_CHAN_ADC0, ADC_TRIG_FREE_RUN, ADC_REF_AVCC, ADC_PS_64);
   adc_conversion_start();
-  adc_data2= adc_result_get(ADC_ADJ_RIGHT);
+ 
+  while ((adc_data2 = adc_result_get(ADC_ADJ_RIGHT)) == EOF ){
+        ;
+    }
+// adc_data2= adc_result_get(ADC_ADJ_RIGHT);
   adc_lux2=adc_data2*0.9765626;
 
   itoa(adc_lux2, lux_value2, 10);

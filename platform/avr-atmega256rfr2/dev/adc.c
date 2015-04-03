@@ -99,6 +99,7 @@ adc_init_full(adc_chan_t chan, adc_trig_t trig, adc_ref_t ref, adc_ps_t prescale
 
     /* Configure */
     ADCSRA = (1<<ADEN)|prescale;
+    ADCSRB &= ~(1<<MUX5);
     ADMUX = (uint8_t)ref|(uint8_t)chan;
     ADCSRB = trig;
 
@@ -163,12 +164,12 @@ adc_result_get(adc_adj_t adjust)
         return EOF;
     }
     adc_conversion_started = false;
-//    ADMUX |= (adjust<<ADLAR);
-  //  return (int16_t)ADC;
-reading = ADCL;
+    ADMUX |= (adjust<<ADLAR);
+    return (int16_t)ADC;
+//reading = ADCL;
   /* Get last two bits. */
-  reading |= (ADCH & 3) << 8;
-return reading;
+  //reading |= (ADCH & 3) << 8;
+//return reading;
 }
 
 /** \}   */
